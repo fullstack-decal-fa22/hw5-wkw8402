@@ -1,6 +1,9 @@
+import {useState} from 'react';
+import {useEffect} from 'react';
 import React from 'react';
 import Post from "./Post";
 import NewPost from "./NewPost";
+import axios from "axios";
 
 const Feed = () => {
   // Un-comment the lines below to complete your solution
@@ -29,7 +32,7 @@ const Feed = () => {
         )
       }
 
-      <NewPost useEffect />
+      <NewPost runPosts={getPostsData} />
     </div>
   )
 
