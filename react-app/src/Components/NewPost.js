@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const NewPost = ({ runPosts }) => {
+const NewPost = ({ addNewPost }) => {
   const [id, setId] = useState();
   const [title, setTitle] = useState();
   const [body, setBody] = useState();
@@ -14,8 +14,8 @@ const NewPost = ({ runPosts }) => {
     })
 
     axios
-      .post("http://localhost:3002/posts", {id : id, title: title, body: body })
-      .then(runPosts);
+      .post("http://localhost:3002/post", {id : id, title: title, body: body })
+      .then(addNewPost);
   }
 
   return <div>

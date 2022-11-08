@@ -1,6 +1,4 @@
-import {useState} from 'react';
-import {useEffect} from 'react';
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Post from "./Post";
 import NewPost from "./NewPost";
 import axios from "axios";
@@ -32,7 +30,7 @@ const Feed = () => {
         )
       }
 
-      <NewPost runPosts={getPostsData} />
+      <NewPost addNewPost = {(newData) => setData([...data, newData])} />
     </div>
   )
 
