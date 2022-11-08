@@ -12,7 +12,7 @@ const Feed = () => {
   const getPostsData = () => {
     axios
       .get("http://localhost:3002/posts") //THIS IS YOUR URL OF YOUR API
-      .then((data) => setData(data.data)) //PROMISE API, THAT MEANS WHEN YOU GET THE DATA WHAT DO I DO WITH IT
+      .then((data) => {console.log(data.data); setData(data.data);}) //PROMISE API, THAT MEANS WHEN YOU GET THE DATA WHAT DO I DO WITH IT
       .catch(error => console.log(error));  //ERROR CATCHING IN CASE WE RECIEVE AN ERROR
   };
 
@@ -30,7 +30,7 @@ const Feed = () => {
         )
       }
 
-      <NewPost addNewPost = {(newData) => setData([...data, newData])} />
+      <NewPost runPosts = {getPostsData} />
     </div>
   )
 
